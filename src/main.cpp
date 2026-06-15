@@ -36,7 +36,7 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int len) {
   // Play buzzer beeps
   for (int i = 0; i < receivedData.numBuzzerBeeps; i++) {
     tone(BUZZER_PIN, receivedData.buzzerPitch * 10, receivedData.buzzerDuration * 10);
-    delay(receivedData.buzzerDuration * 10 + receivedData.buzzerBreak * 10);
+    tone(BUZZER_PIN, 0, receivedData.buzzerBreak * 10);
   }
 }
 
